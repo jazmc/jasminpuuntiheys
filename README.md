@@ -1,5 +1,7 @@
 # jasminpuuntiheys : Ohjelmointi 2 -kurssin harjoitustyö
 
-Sivusto on katsottavissa http://softwareservice.fi:8080/jasminpuuntiheys/puun-tiheys.
+Ohjelmisto on katsottavissa http://softwareservice.fi:8080/jasminpuuntiheys/puun-tiheys.
+Ohjelmiston verkkokäyttöliittymää ei ole mobiilioptimoitu.
 
-Sivustoon liittyvä tietokanta pitää siirtää C:\home\jasmin kansioon, nyt sijaitsee projektin juuressa.
+Sivustoon liittyvän tietokannan polku on /home/jasmin/puuntiheys.sqlite, se täytyy vaihtaa jos haluaa että projektitiedosto toimii.
+Polku löytyy src/database/JDBCPuuntiheysDao.java classista kolmesta eri kohdasta.
