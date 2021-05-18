@@ -4,7 +4,7 @@ Ohjelmisto on katsottavissa http://softwareservice.fi:8080/jasminpuuntiheys/puun
 Ohjelmiston verkkokäyttöliittymää ei ole mobiilioptimoitu.
 
 Sivustoon liittyvän tietokannan polku on /home/jasmin/puuntiheys.sqlite, se täytyy vaihtaa jos haluaa että projektitiedosto toimii.
-Polku löytyy src/database/JDBCPuuntiheysDao.java classista kolmesta eri kohdasta.
+Polku löytyy src/database/JDBCPuuntiheysDao.java classista kolmesta eri kohdasta. Tietokanta on projektin juuressa.
 
 
 # Työn kuvaus ja rakenne
