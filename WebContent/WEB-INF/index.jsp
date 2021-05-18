@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<!-- Sivusto on katsottavissa http://softwareservice.fi:8080/jasminpuuntiheys/puun-tiheys -->
 <!DOCTYPE html>
 <html>
 <head>
