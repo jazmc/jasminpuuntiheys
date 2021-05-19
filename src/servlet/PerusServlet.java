@@ -18,7 +18,6 @@ public class PerusServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("PerusServlet get");
 		// jos ei olla painettu pro-version nappia eli salasana-parametri on tyhjä
 		if (req.getParameter("salasana") == "" || req.getParameter("salasana") == null) {
 
@@ -58,7 +57,6 @@ public class PerusServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("PerusServlet post");
 		// merkistön tarkistus
 		req.setCharacterEncoding("UTF-8");
 

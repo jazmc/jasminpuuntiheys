@@ -14,7 +14,6 @@ public class PoistaServlet extends HttpServlet {
 
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		System.out.println("Olen poistamassa");
 		// parsea id parametrinä saadusta stringistä
 		long id = Long.parseLong(req.getParameter("id"));
 
