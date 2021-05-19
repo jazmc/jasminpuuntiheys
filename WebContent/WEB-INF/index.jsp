@@ -38,6 +38,7 @@
 	</form>
 	
 	<span class="selite">Tiheys: ${tiheystaytto}</span>
+	<span class="selite" style="padding-top:0;">${ jenkki }</span>
 
 	<script>
 		$("#pro").click(function() {

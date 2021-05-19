@@ -50,7 +50,7 @@ public class PerusServlet extends HttpServlet {
 			req.setAttribute("korkeustaytto", korkeustaytto);
 			req.setAttribute("pituustaytto", pituustaytto);
 			req.setAttribute("painotaytto", painotaytto);
-			req.setAttribute("tiheystaytto", tiheystaytto);
+			req.setAttribute("tiheystaytto", tiheystaytto+" kg/m<sup>3</sup>");
 			req.getRequestDispatcher("/WEB-INF/index.jsp").forward(req, resp);
 		}
 	}

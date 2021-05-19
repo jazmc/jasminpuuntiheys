@@ -35,11 +35,13 @@ public class LaskeServlet extends HttpServlet {
 		kaksDesimaalia.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ENGLISH));
 		double tiheys = Double.parseDouble(
 				kaksDesimaalia.format((painos / 1000) / ((korkeuss / 1000) * (leveyss / 1000) * (pituuss / 1000))));
-		req.setAttribute("tiheystaytto", tiheys);
+		String jenkki = kaksDesimaalia.format(tiheys * 0.0624279606);
+		req.setAttribute("tiheystaytto", tiheys+" kg/m<sup>3</sup>");
 		req.setAttribute("korkeustaytto", korkeuss);
 		req.setAttribute("leveystaytto", leveyss);
 		req.setAttribute("painotaytto", painos);
 		req.setAttribute("pituustaytto", pituuss);
+		req.setAttribute("jenkki", "(= "+jenkki+" lb/ft<sup>3</sup>)");
 		// palataan sivulle niin että inputeissa olleet tiedot säilyy
 		req.getRequestDispatcher("WEB-INF/index.jsp").forward(req, resp);
 	}

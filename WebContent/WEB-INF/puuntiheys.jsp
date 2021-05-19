@@ -30,6 +30,7 @@
 	</form>
 	
 	<span class="selite">Tiheys: ${ tiheys }</span>
+	<span class="selite" style="padding-top:0;">${ jenkki }</span>
 
 	<table>
 		<tr>

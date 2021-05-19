@@ -56,7 +56,7 @@ public class PuuntiheysServlet extends HttpServlet {
 		kaksDesimaalia.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ENGLISH));
 		double tiheys = Double.parseDouble(
 				kaksDesimaalia.format((paino / 1000) / ((korkeus / 1000) * (leveys / 1000) * (pituus / 1000))));
-
+		String jenkki = kaksDesimaalia.format(tiheys * 0.0624279606);
 		// grainin stringi
 		String grain = req.getParameter("grain");
 
@@ -67,7 +67,8 @@ public class PuuntiheysServlet extends HttpServlet {
 		// haetaan taas tuotteet
 		List<Puupalikka> tuotteet = dao.getAllItems();
 		req.setAttribute("tuotteet", tuotteet);
-		req.setAttribute("tiheys", tiheys);
+		req.setAttribute("tiheys", tiheys+" kg/m<sup>3</sup>");
+		req.setAttribute("jenkki", "(= "+jenkki+" lb/ft<sup>3</sup>)");
 		req.setAttribute("leveys", leveys);
 		req.setAttribute("korkeus", korkeus);
 		req.setAttribute("pituus", pituus);
