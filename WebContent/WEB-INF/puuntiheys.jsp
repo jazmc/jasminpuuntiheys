@@ -21,11 +21,11 @@
 	<h1>&#127794;&#128296; Puun tiheyslaskuri <span class="pro">PRO</span> &#128296;&#127794;</h1>
 <input id="palaa" value="Nollaa" type="submit" style="margin:0 auto 1em; display:block;">
 	<form method="post">
-		<span>Korkeus (mm):</span> <input name="korkeus" type="text" required placeholder="..." value="${ param['korkeus']}"/>
-		<span>Leveys (mm):</span> <input name="leveys" type="text" required placeholder="..." value="${ param['leveys']}"/>
-		<span>Pituus (mm):</span> <input name="pituus" type="text" required placeholder="..." value="${ param['pituus']}"/>
-		<span>Paino (g):</span> <input name="paino" type="text" required placeholder="..." value="${ param['paino']}"/>
-		<span>Grain:</span> <input name="grain" type="text" placeholder="..." value="${ param['grain']}"/>
+		<span>Korkeus (mm):</span> <input name="korkeus" type="text" required placeholder="..." value="${ korkeus }"/>
+		<span>Leveys (mm):</span> <input name="leveys" type="text" required placeholder="..." value="${ leveys }"/>
+		<span>Pituus (mm):</span> <input name="pituus" type="text" required placeholder="..." value="${ pituus }"/>
+		<span>Paino (g):</span> <input name="paino" type="text" required placeholder="..." value="${ paino }"/>
+		<span>Grain:</span> <input name="grain" type="text" placeholder="..." value="${ grain }"/>
 		<input type="submit" value="Laske" />
 	</form>
 	

@@ -68,6 +68,11 @@ public class PuuntiheysServlet extends HttpServlet {
 		List<Puupalikka> tuotteet = dao.getAllItems();
 		req.setAttribute("tuotteet", tuotteet);
 		req.setAttribute("tiheys", tiheys);
+		req.setAttribute("leveys", leveys);
+		req.setAttribute("korkeus", korkeus);
+		req.setAttribute("pituus", pituus);
+		req.setAttribute("grain", grain);
+		req.setAttribute("paino", paino);
 
 		req.getRequestDispatcher("/WEB-INF/puuntiheys.jsp").forward(req, resp);
 
