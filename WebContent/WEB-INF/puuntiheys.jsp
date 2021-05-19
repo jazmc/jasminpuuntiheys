@@ -13,23 +13,23 @@
 		rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/jasminpuuntiheys/demo.css">
 	<script src="/jasminpuuntiheys/palikkascript.js">
-
 	</script>
+	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 
 <body>
 	<h1>&#127794;&#128296; Puun tiheyslaskuri <span class="pro">PRO</span> &#128296;&#127794;</h1>
-
+<input id="palaa" value="Nollaa" type="submit" style="margin:0 auto 1em; display:block;">
 	<form method="post">
-		<span>Korkeus (mm):</span> <input name="korkeus" type="text" required placeholder="..." ${ korkeustaytto }/>
-		<span>Leveys (mm):</span> <input name="leveys" type="text" required placeholder="..." ${ leveystaytto }/>
-		<span>Pituus (mm):</span> <input name="pituus" type="text" required placeholder="..." ${ pituustaytto }/>
-		<span>Paino (g):</span> <input name="paino" type="text" required placeholder="..." ${ painotaytto }/>
-		<span>Grain:</span> <input name="grain" type="text" placeholder="..." ${ graintaytto }/>
+		<span>Korkeus (mm):</span> <input name="korkeus" type="text" required placeholder="..." value="${ param['korkeus']}"/>
+		<span>Leveys (mm):</span> <input name="leveys" type="text" required placeholder="..." value="${ param['leveys']}"/>
+		<span>Pituus (mm):</span> <input name="pituus" type="text" required placeholder="..." value="${ param['pituus']}"/>
+		<span>Paino (g):</span> <input name="paino" type="text" required placeholder="..." value="${ param['paino']}"/>
+		<span>Grain:</span> <input name="grain" type="text" placeholder="..." value="${ param['grain']}"/>
 		<input type="submit" value="Laske" />
 	</form>
 	
-	<span class="selite">Tiheys: ${tiheystaytto}</span>
+	<span class="selite">Tiheys: ${ tiheys }</span>
 
 	<table>
 		<tr>
@@ -56,6 +56,10 @@
 			</tr>
 		</c:forEach>
 	</table>
-
+<script>
+$("#palaa").click(function() {
+	location.href = "/jasminpuuntiheys/puuntiheys";
+});
+</script>
 </body>
 </html>

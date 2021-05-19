@@ -1,3 +1,4 @@
+
 package servlet;
 
 import java.io.IOException;
@@ -22,7 +23,7 @@ public class PuuntiheysServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
-
+		System.out.println("PuuntiheysServlet get");
 		// tarkistetaan että sessioniin talletettu salasana täsmää
 		if (session.getAttribute("salasana") == "31") {
 
@@ -31,41 +32,6 @@ public class PuuntiheysServlet extends HttpServlet {
 			List<Puupalikka> tuotteet = dao.getAllItems();
 			req.setAttribute("tuotteet", tuotteet);
 
-			// inputtien valmistäytöt, jos niissä ei ole ollut mitään
-			String korkeustaytto = "";
-			String leveystaytto = "";
-			String pituustaytto = "";
-			String painotaytto = "";
-			String graintaytto = "";
-			String tiheystaytto = "(Syötä arvot ja paina laske)";
-
-			// inputeihin täytöt, jos asetettu
-			if (req.getParameter("korkeus") != null && req.getParameter("korkeus") != "") {
-				korkeustaytto = " value=\"" + req.getParameter("korkeus") + "\"";
-			}
-			if (req.getParameter("leveys") != null && req.getParameter("leveys") != "") {
-				leveystaytto = " value=\"" + req.getParameter("leveys") + "\"";
-			}
-			if (req.getParameter("pituus") != null && req.getParameter("pituus") != "") {
-				pituustaytto = " value=\"" + req.getParameter("pituus") + "\"";
-			}
-			if (req.getParameter("paino") != null && req.getParameter("paino") != "") {
-				painotaytto = " value=\"" + req.getParameter("paino") + "\"";
-			}
-			if (req.getParameter("grain") != null && req.getParameter("grain") != "") {
-				graintaytto = " value=\"" + req.getParameter("grain") + "\"";
-			}
-			if (req.getParameter("tiheys") != null && req.getParameter("tiheys") != "") {
-				tiheystaytto = req.getParameter("tiheys") + " kg/m<sup>3</sup>";
-			}
-
-			// lähetetään attribuutit eteenpäin
-			req.setAttribute("leveystaytto", leveystaytto);
-			req.setAttribute("korkeustaytto", korkeustaytto);
-			req.setAttribute("pituustaytto", pituustaytto);
-			req.setAttribute("painotaytto", painotaytto);
-			req.setAttribute("graintaytto", graintaytto);
-			req.setAttribute("tiheystaytto", tiheystaytto);
 			req.getRequestDispatcher("/WEB-INF/puuntiheys.jsp").forward(req, resp);
 
 		} else {
@@ -99,9 +65,12 @@ public class PuuntiheysServlet extends HttpServlet {
 		Puupalikka tuote = new Puupalikka(tiheys, korkeus, leveys, paino, pituus, grain);
 		dao.addItem(tuote);
 
-		// ohjaus samalle sivulle niin että inputtien tiedot säilyy
-		resp.sendRedirect("/jasminpuuntiheys/puuntiheys?tiheys=" + tiheys + "&korkeus=" + korkeus + "&leveys=" + leveys + "&paino="
-				+ paino + "&pituus=" + pituus + "&grain=" + grain);
+		// haetaan taas tuotteet
+		List<Puupalikka> tuotteet = dao.getAllItems();
+		req.setAttribute("tuotteet", tuotteet);
+		req.setAttribute("tiheys", tiheys);
+
+		req.getRequestDispatcher("/WEB-INF/puuntiheys.jsp").forward(req, resp);
 
 	}
 

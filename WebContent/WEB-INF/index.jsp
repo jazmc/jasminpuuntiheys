@@ -29,11 +29,11 @@
 	
 	<h1>&#127794;&#128296; Puun tiheyslaskuri &#128296;&#127794;</h1>
 
-	<form method="post">
-		<span>Korkeus (mm):</span> <input name="korkeus" type="text" required placeholder="..." ${ korkeustaytto }/>
-		<span>Leveys (mm):</span> <input name="leveys" type="text" required placeholder="..." ${ leveystaytto }/>
-		<span>Pituus (mm):</span> <input name="pituus" type="text" required placeholder="..." ${ pituustaytto }/>
-		<span>Paino (g):</span> <input name="paino" type="text" required placeholder="..." ${ painotaytto }/>
+	<form action="laske">
+		<span>Korkeus (mm):</span> <input name="korkeus" type="text" required placeholder="..." value="${ korkeustaytto }"/>
+		<span>Leveys (mm):</span> <input name="leveys" type="text" required placeholder="..." value="${ leveystaytto }"/>
+		<span>Pituus (mm):</span> <input name="pituus" type="text" required placeholder="..." value="${ pituustaytto }"/>
+		<span>Paino (g):</span> <input name="paino" type="text" required placeholder="..." value="${ painotaytto }"/>
 		<input type="submit" value="Laske" /><a id="pro">Pro-versioon</a>
 	</form>
 	

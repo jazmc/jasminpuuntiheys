@@ -18,6 +18,7 @@ public class PerusServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("PerusServlet get");
 		// jos ei olla painettu pro-version nappia eli salasana-parametri on tyhjä
 		if (req.getParameter("salasana") == "" || req.getParameter("salasana") == null) {
 
@@ -30,16 +31,16 @@ public class PerusServlet extends HttpServlet {
 
 			// asetetaan inputien täytöt, jos sellaiset on ollut requestissa
 			if (req.getParameter("korkeus") != null && req.getParameter("korkeus") != "") {
-				korkeustaytto = " value=\"" + req.getParameter("korkeus") + "\"";
+				korkeustaytto = req.getParameter("korkeus");
 			}
 			if (req.getParameter("leveys") != null && req.getParameter("leveys") != "") {
-				leveystaytto = " value=\"" + req.getParameter("leveys") + "\"";
+				leveystaytto = req.getParameter("leveys");
 			}
 			if (req.getParameter("pituus") != null && req.getParameter("pituus") != "") {
-				pituustaytto = " value=\"" + req.getParameter("pituus") + "\"";
+				pituustaytto = req.getParameter("pituus");
 			}
 			if (req.getParameter("paino") != null && req.getParameter("paino") != "") {
-				painotaytto = " value=\"" + req.getParameter("paino") + "\"";
+				painotaytto = req.getParameter("paino");
 			}
 			if (req.getParameter("tiheys") != null && req.getParameter("tiheys") != "") {
 				tiheystaytto = req.getParameter("tiheys") + " kg/m<sup>3</sup>";
@@ -57,6 +58,7 @@ public class PerusServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("PerusServlet post");
 		// merkistön tarkistus
 		req.setCharacterEncoding("UTF-8");
 
